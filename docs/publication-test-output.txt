@@ -1,0 +1,450 @@
+Publication audit: 2026-11-22; Windows PowerShell; isolated HTTP fixtures.
+v24.18.0
+11.16.0
+COMMAND: npm ci
+npm error code EPERM
+npm error syscall unlink
+npm error path C:\Work\GIT\commerce-atelier\node_modules\@next\swc-win32-x64-msvc\next-swc.win32-x64-msvc.node
+npm error errno -4048
+npm error [Error: EPERM: operation not permitted, unlink 'C:\Work\GIT\commerce-atelier\node_modules\@next\swc-win32-x64-msvc\next-swc.win32-x64-msvc.node'] {
+npm error   errno: -4048,
+npm error   code: 'EPERM',
+npm error   syscall: 'unlink',
+npm error   path: 'C:\\Work\\GIT\\commerce-atelier\\node_modules\\@next\\swc-win32-x64-msvc\\next-swc.win32-x64-msvc.node'
+npm error }
+npm error
+npm error The operation was rejected by your operating system.
+npm error It's possible that the file was already in use (by a text editor or antivirus), or that you lack permissions to access it.
+npm error
+npm error If you believe this might be a permissions issue, please double-check the permissions of the file and its containing directories, or try running the command again as root/Administrator.
+npm error A complete log of this run can be found in: C:\Users\kori_\AppData\Local\npm-cache\_logs\2026-11-22T00_00_54_608Z-debug-0.log
+EXIT CODE: -4048
+Retry after stopping commerce-atelier preview locking the native module.
+COMMAND: npm ci
+
+added 31 packages, and audited 32 packages in 23s
+
+5 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+npm warn allow-scripts 1 package has install scripts not yet covered by allowScripts:
+npm warn allow-scripts   esbuild@0.28.2 (postinstall: node install.js)
+npm warn allow-scripts
+npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to review, or `npm approve-scripts <pkg>` to allow.
+EXIT CODE: 0
+COMMAND: npm test
+
+> commerce-atelier@1.0.0 test
+> tsx --test tests/*.test.ts
+
+✔ fresh catalog uses the six photographic product covers (5.5901ms)
+✔ reopening migrates only original seed galleries and preserves catalog and order data (109.0982ms)
+✔ salted password hashes accept only the correct password (196.9646ms)
+✔ opaque admin sessions expire and can be revoked (3.894ms)
+✔ arbitrary cookie values cannot authorize admin access (2.1141ms)
+✔ variant edits reject repeated existing IDs (6.4041ms)
+✔ archived product cannot be checked out and removed variant records survive cancellation (8.6995ms)
+✔ admin creates products with gallery and independently stocked color/size variants (3.1143ms)
+✔ product creation rejects unknown category and nonlocal image URLs (6.0482ms)
+✔ admin updates variant stock without altering other variants (3.5492ms)
+✔ soft archived products disappear from shop and can be restored (5.3427ms)
+✔ category rename propagates to products and used categories cannot be archived (4.1501ms)
+✔ duplicate variant combinations and negative stock are rejected (2.6042ms)
+✔ contact form stores valid inquiries and rejects malformed email (2.8012ms)
+✔ same-origin check accepts canonical Next URL with the original Host header (5.0896ms)
+✔ same-origin check rejects an external browser origin (0.785ms)
+✔ client and server money formatting preserve charged cents (26.3132ms)
+✔ unchanged variant stock is omitted from metadata edits (13.1374ms)
+✔ description save from stale admin form cannot restore reserved stock (9.0638ms)
+✔ intentional stock adjustment from a stale form is rejected atomically (5.092ms)
+✔ stock version rejects stale edits even after reservation and cancellation return the same count (3.8695ms)
+✔ unversioned bulk and individual stock resets are rejected (3.8694ms)
+✔ catalog variants are plain serializable objects for React Server Components (10.3675ms)
+✔ catalog contains original products and size variants (3.391ms)
+✔ checkout calculates integer-cent prices on the server (5.1548ms)
+✔ duplicate variants merge before stock validation (3.7895ms)
+✔ fractional quantities are rejected (2.6324ms)
+✔ unknown variants cannot be ordered (4.6175ms)
+✔ insufficient stock rolls back every reservation (4.705ms)
+✔ checkout retries return the same order without consuming stock twice (4.3528ms)
+✔ reusing a key with changed items is rejected (4.1205ms)
+✔ cancelling an order restores stock exactly once (5.7353ms)
+✔ order workflow rejects backwards transitions (13.9064ms)
+✔ duplicate paid events have one effect (6.5141ms)
+✔ payment amount mismatch never marks an order paid (5.5292ms)
+✔ expired Stripe session releases reserved stock (6.6617ms)
+✔ customer information and checkout keys are validated (2.4168ms)
+✔ admin updates validate price and stock (17.7426ms)
+✔ Stripe retry parameters keep the same order-based expiry when the clock advances (7.7248ms)
+✔ concurrent Stripe idempotency error does not cancel or restock the winning pending order (4.8409ms)
+✔ session attachment rejects a cancelled order instead of returning a payable URL (12.953ms)
+✔ Stripe verifies the exact signed raw body and rejects mutation (8.1439ms)
+✔ multipart body is bounded even without a content-length header (31.1101ms)
+✔ upload accepts PNG by both MIME and actual magic header (0.299ms)
+✔ upload rejects oversized payload before writing (0.3099ms)
+✔ upload rejects SVG executables and MIME spoofing (0.3425ms)
+✔ image filename validator rejects traversal and arbitrary paths (0.2848ms)
+✔ an outfit keeps selected sizes and exact product prices (5.4417ms)
+✔ a sold out or unknown selection cannot partially add an outfit (3.5311ms)
+✔ batch cart additions reject overstock atomically and combine duplicates (2.778ms)
+✔ saved pieces tolerate corrupt storage, deduplicate and enforce a bounded list (1.4031ms)
+ℹ tests 51
+ℹ suites 0
+ℹ pass 51
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1443.765
+EXIT CODE: 0
+COMMAND: npm run typecheck
+
+> commerce-atelier@1.0.0 typecheck
+> tsc --noEmit
+
+EXIT CODE: 0
+COMMAND: npm run build
+
+> commerce-atelier@1.0.0 build
+> next build
+
+▲ Next.js 16.4.6 (Turbopack)
+✓ Running next.config.ts took 55ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 838ms
+  Running TypeScript ...
+  Finished TypeScript in 2.9s ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/13) ...
+  Generating static pages using 7 workers (3/13)
+  Generating static pages using 7 workers (6/13)
+  Generating static pages using 7 workers (9/13)
+✓ Generating static pages using 7 workers (13/13) in 509ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ƒ /
+├ ○ /_not-found
+├ ○ /about
+├ ƒ /admin
+├ ƒ /api/admin/categories
+├ ƒ /api/admin/categories/[id]
+├ ƒ /api/admin/inquiries
+├ ƒ /api/admin/login
+├ ƒ /api/admin/orders/[id]
+├ ƒ /api/admin/products
+├ ƒ /api/admin/products/[id]
+├ ƒ /api/admin/uploads
+├ ƒ /api/catalog
+├ ƒ /api/checkout
+├ ƒ /api/contact
+├ ƒ /api/images/[name]
+├ ƒ /api/stripe/webhook
+├ ○ /cart
+├ ƒ /checkout
+├ ƒ /collections
+├ ○ /contact
+├ ƒ /lookbook
+├ ƒ /order/[id]
+├ ƒ /product/[id]
+└ ƒ /saved
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
+EXIT CODE: 0
+COMMAND: npm run test:http
+
+> commerce-atelier@1.0.0 test:http
+> tsx scripts/verify-http.ts
+
+PASS catalog serves six products with four variants
+PASS storefront renders /
+PASS storefront renders /collections
+PASS storefront renders /product/linen-shirt
+PASS admin product mutation rejects anonymous request
+PASS cross-origin checkout is rejected
+PASS bad login is rejected
+PASS admin login issues HttpOnly session
+PASS authenticated product price edit persists
+PASS COD order confirms using server price
+PASS metadata-only variant edits preserve live reserved stock
+PASS stale stock update rejects without restoring inventory
+PASS HTTP checkout retry returns same order
+PASS receipt page renders
+PASS admin can advance order
+PASS admin cancellation releases stock
+PASS reserved inventory is restored
+PASS unsigned unconfigured Stripe webhook rejects
+PASS image upload rejects anonymous caller
+PASS image upload rejects executable with spoofed MIME
+PASS image upload rejects oversized file
+PASS image upload rejects more than five files
+PASS valid PNG upload creates a UUID image URL
+PASS uploaded image serves exact bytes with nosniff
+PASS image route rejects arbitrary filename
+PASS category creation rejects anonymous caller
+PASS admin creates a category
+PASS admin renames a category
+PASS admin creates gallery product with size/color variants
+PASS admin edits individual variant stock
+PASS new product renders gallery and both colors
+PASS fractional product price renders exact cents
+PASS fractional checkout charges exact 9651 cents
+PASS receipt renders exact fractional total
+PASS used category cannot be archived
+PASS admin soft archives product
+PASS archived product is unavailable in storefront
+PASS admin restores archived product
+PASS empty category can be archived and restored
+PASS contact rejects malformed email
+PASS contact saves a valid inquiry
+PASS protected admin inbox contains inquiry
+PASS protected admin page renders categories and inbox
+PASS contact page renders
+PASS admin logout revokes session
+HTTP verification: 45/45 passed. Isolated in-memory database; no demo data changed.
+EXIT CODE: 0
+CLEAN SOURCE SNAPSHOT: dependencies/build/data/env excluded; 114 source files.
+CLEAN COMMAND: npm ci
+
+added 31 packages, and audited 32 packages in 36s
+
+5 packages are looking for funding
+  run `npm fund` for details
+
+found 0 vulnerabilities
+npm warn allow-scripts 1 package has install scripts not yet covered by allowScripts:
+npm warn allow-scripts   esbuild@0.28.2 (postinstall: node install.js)
+npm warn allow-scripts
+npm warn allow-scripts Run `npm approve-scripts --allow-scripts-pending` to review, or `npm approve-scripts <pkg>` to allow.
+EXIT CODE: 0
+CLEAN COMMAND: npm run setup
+
+> commerce-atelier@1.0.0 setup
+> node scripts/setup.mjs
+
+Created ignored .env.local. Admin email: admin@atelier.local
+Store this password in your password manager. Restart the server after setup.
+EXIT CODE: 0
+CLEAN COMMAND: npm run build
+
+> commerce-atelier@1.0.0 build
+> next build
+
+▲ Next.js 16.4.6 (Turbopack)
+- Environments: .env.local
+⚠ Warning: Next.js ignored package-lock.json in C:\Users\kori_ because it would include your home directory (C:\Users\kori_).
+ To use this directory, set `turbopack.root` in your Next.js config.
+
+✓ Running next.config.ts took 52ms
+
+  Creating an optimized production build ...
+✓ Compiled successfully in 2.4s
+  Running TypeScript ...
+  Finished TypeScript in 3.6s ...
+  Collecting page data using 7 workers ...
+  Generating static pages using 7 workers (0/13) ...
+  Generating static pages using 7 workers (3/13)
+  Generating static pages using 7 workers (6/13)
+  Generating static pages using 7 workers (9/13)
+✓ Generating static pages using 7 workers (13/13) in 284ms
+  Finalizing page optimization ...
+
+Route (app)
+┌ ƒ /
+├ ○ /_not-found
+├ ○ /about
+├ ƒ /admin
+├ ƒ /api/admin/categories
+├ ƒ /api/admin/categories/[id]
+├ ƒ /api/admin/inquiries
+├ ƒ /api/admin/login
+├ ƒ /api/admin/orders/[id]
+├ ƒ /api/admin/products
+├ ƒ /api/admin/products/[id]
+├ ƒ /api/admin/uploads
+├ ƒ /api/catalog
+├ ƒ /api/checkout
+├ ƒ /api/contact
+├ ƒ /api/images/[name]
+├ ƒ /api/stripe/webhook
+├ ○ /cart
+├ ƒ /checkout
+├ ƒ /collections
+├ ○ /contact
+├ ƒ /lookbook
+├ ƒ /order/[id]
+├ ƒ /product/[id]
+└ ƒ /saved
+
+
+○  (Static)   prerendered as static content
+ƒ  (Dynamic)  server-rendered on demand
+
+EXIT CODE: 0
+CLEAN COMMAND: npm run test:http
+
+> commerce-atelier@1.0.0 test:http
+> tsx scripts/verify-http.ts
+
+PASS catalog serves six products with four variants
+PASS storefront renders /
+PASS storefront renders /collections
+PASS storefront renders /product/linen-shirt
+PASS admin product mutation rejects anonymous request
+PASS cross-origin checkout is rejected
+PASS bad login is rejected
+PASS admin login issues HttpOnly session
+PASS authenticated product price edit persists
+PASS COD order confirms using server price
+PASS metadata-only variant edits preserve live reserved stock
+PASS stale stock update rejects without restoring inventory
+PASS HTTP checkout retry returns same order
+PASS receipt page renders
+PASS admin can advance order
+PASS admin cancellation releases stock
+PASS reserved inventory is restored
+PASS unsigned unconfigured Stripe webhook rejects
+PASS image upload rejects anonymous caller
+PASS image upload rejects executable with spoofed MIME
+PASS image upload rejects oversized file
+PASS image upload rejects more than five files
+PASS valid PNG upload creates a UUID image URL
+PASS uploaded image serves exact bytes with nosniff
+PASS image route rejects arbitrary filename
+PASS category creation rejects anonymous caller
+PASS admin creates a category
+PASS admin renames a category
+PASS admin creates gallery product with size/color variants
+PASS admin edits individual variant stock
+PASS new product renders gallery and both colors
+PASS fractional product price renders exact cents
+PASS fractional checkout charges exact 9651 cents
+PASS receipt renders exact fractional total
+PASS used category cannot be archived
+PASS admin soft archives product
+PASS archived product is unavailable in storefront
+PASS admin restores archived product
+PASS empty category can be archived and restored
+PASS contact rejects malformed email
+PASS contact saves a valid inquiry
+PASS protected admin inbox contains inquiry
+PASS protected admin page renders categories and inbox
+PASS contact page renders
+PASS admin logout revokes session
+HTTP verification: 45/45 passed. Isolated in-memory database; no demo data changed.
+EXIT CODE: 0
+CLEAN CHECKOUT SETUP/BUILD/HTTP PASS; no global paths required.
+COMMAND: python -X utf8 scripts/verify-publication-browser.py (ephemeral local server)
+Traceback (most recent call last):
+  File "C:\Work\GIT\commerce-atelier\scripts\verify-publication-browser.py", line 149, in <module>
+    main()
+  File "C:\Work\GIT\commerce-atelier\scripts\verify-publication-browser.py", line 62, in main
+    expect(page.locator(".collection-index a")).to_have_count(4)
+  File "C:\Users\kori_\AppData\Roaming\Python\Python311\site-packages\playwright\sync_api\_generated.py", line 18842, in to_have_count
+    self._sync(self._impl_obj.to_have_count(count=count, timeout=timeout))
+  File "C:\Users\kori_\AppData\Roaming\Python\Python311\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\kori_\AppData\Roaming\Python\Python311\site-packages\playwright\_impl\_assertions.py", line 309, in to_have_count
+    await self._expect_impl(
+  File "C:\Users\kori_\AppData\Roaming\Python\Python311\site-packages\playwright\_impl\_assertions.py", line 74, in _expect_impl
+    raise AssertionError(
+AssertionError: Locator expected to have count '4'
+Actual value: 5
+Call log:
+LocatorAssertions.to_have_count with timeout 5000ms
+  - waiting for locator(".collection-index a")
+  -   locator resolved to 5 elements
+  -   unexpected value "5"
+  -   locator resolved to 5 elements
+  -   unexpected value "5"
+  -   locator resolved to 5 elements
+  -   unexpected value "5"
+  -   locator resolved to 5 elements
+  -   unexpected value "5"
+  -   locator resolved to 5 elements
+  -   unexpected value "5"
+  -   locator resolved to 5 elements
+  -   unexpected value "5"
+  -   locator resolved to 5 elements
+  -   unexpected value "5"
+  -   locator resolved to 5 elements
+  -   unexpected value "5"
+
+EXIT CODE: 1
+Browser fixture correction: catalog has five categories; compare navigation with actual catalog rather than a hard-coded count.
+COMMAND: python -X utf8 scripts/verify-publication-browser.py
+PASS home exposes products and category navigation
+Traceback (most recent call last):
+  File "C:\Work\GIT\commerce-atelier\scripts\verify-publication-browser.py", line 150, in <module>
+    main()
+  File "C:\Work\GIT\commerce-atelier\scripts\verify-publication-browser.py", line 72, in main
+    expect(page.locator(".product-card")).to_have_count(1)
+  File "C:\Users\kori_\AppData\Roaming\Python\Python311\site-packages\playwright\sync_api\_generated.py", line 18842, in to_have_count
+    self._sync(self._impl_obj.to_have_count(count=count, timeout=timeout))
+  File "C:\Users\kori_\AppData\Roaming\Python\Python311\site-packages\playwright\_impl\_sync_base.py", line 115, in _sync
+    return task.result()
+           ^^^^^^^^^^^^^
+  File "C:\Users\kori_\AppData\Roaming\Python\Python311\site-packages\playwright\_impl\_assertions.py", line 309, in to_have_count
+    await self._expect_impl(
+  File "C:\Users\kori_\AppData\Roaming\Python\Python311\site-packages\playwright\_impl\_assertions.py", line 74, in _expect_impl
+    raise AssertionError(
+AssertionError: Locator expected to have count '1'
+Actual value: 2
+Call log:
+LocatorAssertions.to_have_count with timeout 5000ms
+  - waiting for locator(".product-card")
+  -   locator resolved to 2 elements
+  -   unexpected value "2"
+  -   locator resolved to 2 elements
+  -   unexpected value "2"
+  -   locator resolved to 2 elements
+  -   unexpected value "2"
+  -   locator resolved to 2 elements
+  -   unexpected value "2"
+  -   locator resolved to 2 elements
+  -   unexpected value "2"
+  -   locator resolved to 2 elements
+  -   unexpected value "2"
+  -   locator resolved to 2 elements
+  -   unexpected value "2"
+  -   locator resolved to 2 elements
+  -   unexpected value "2"
+  -   locator resolved to 2 elements
+  -   unexpected value "2"
+
+EXIT CODE: 1
+Browser fixture correction: two Shirts products; expected category membership now comes from the catalog.
+COMMAND: python -X utf8 scripts/verify-publication-browser.py
+PASS home exposes products and category navigation
+PASS catalog search category filters and price sorting work after hydration
+PASS gallery and color selection preserve the exact size variant in the bag
+PASS cart quantity totals persistence and removal work with fractional prices
+PASS COD checkout confirms selected variant and clears the persistent bag
+PASS six public/admin routes have no horizontal overflow at 390px
+PASS six public/admin routes have no horizontal overflow at 768px
+PASS six public/admin routes have no horizontal overflow at 1440px
+PASS no browser runtime exceptions
+Publication browser verification: 9/9 passed; isolated in-memory data.
+EXIT CODE: 0
+FINAL BROWSER COMMAND: python -X utf8 commerce-atelier/scripts/verify-publication-browser.py from another working directory; dynamic isolated port; populated bag/checkout.
+PASS home exposes products and category navigation
+PASS catalog search category filters and price sorting work after hydration
+PASS gallery and color selection preserve the exact size variant in the bag
+PASS cart quantity totals persistence and removal work with fractional prices
+PASS COD checkout confirms selected variant and clears the persistent bag
+PASS eight public/admin routes including populated cart/checkout have no overflow at 390px
+PASS eight public/admin routes including populated cart/checkout have no overflow at 768px
+PASS eight public/admin routes including populated cart/checkout have no overflow at 1440px
+PASS no browser runtime exceptions
+Publication browser verification: 9/9 passed; isolated in-memory data.
+EXIT CODE: 0
+Audit shell: Core 7.6.9
+Log credential-pattern review: no credential values matched.
+Preview restarted after verified build on port 3104.
+Preview restart verification: HTTP 200, 6 catalog products; server ready.

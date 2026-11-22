@@ -1,0 +1,51 @@
+{
+  "provider": "Kie AI",
+  "model": "nano-banana-2-lite",
+  "credits": 4,
+  "source_sha256": "98795d36080452bc4a710c77ef4a6f303e4069fabcf0a155f1104bd1fe46b268",
+  "images": [
+    {
+      "id": "linen-shirt",
+      "file": "photo-linen-shirt.webp",
+      "width": 337,
+      "height": 340,
+      "bytes": 10272
+    },
+    {
+      "id": "studio-trouser",
+      "file": "photo-studio-trouser.webp",
+      "width": 338,
+      "height": 340,
+      "bytes": 6532
+    },
+    {
+      "id": "wrap-dress",
+      "file": "photo-wrap-dress.webp",
+      "width": 338,
+      "height": 340,
+      "bytes": 10516
+    },
+    {
+      "id": "knit-vest",
+      "file": "photo-knit-vest.webp",
+      "width": 337,
+      "height": 340,
+      "bytes": 16146
+    },
+    {
+      "id": "cotton-tee",
+      "file": "photo-cotton-tee.webp",
+      "width": 338,
+      "height": 340,
+      "bytes": 5114
+    },
+    {
+      "id": "weekend-jacket",
+      "file": "photo-weekend-jacket.webp",
+      "width": 338,
+      "height": 340,
+      "bytes": 12300
+    }
+  ],
+  "hero": "capsule.webp"
+}

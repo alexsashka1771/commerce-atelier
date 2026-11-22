@@ -1,0 +1,8 @@
+{
+  "prompt": "Create a single high quality fashion editorial triptych, three equally wide vertical photographs placed directly side by side with NO gutters. Use the actual garments in the supplied reference, keeping their colors and shapes recognizable. Left photograph: the oat linen shirt and clay cotton trousers arranged together, overhead on a warm chalk studio floor. Center: terracotta linen wrap dress and butter knitted vest draped over a simple walnut chair, close fabric texture, no human. Right: olive weekend jacket, chalk cotton tee and clay trousers arranged as a weekend outfit beside a sunlit stone ledge. Sophisticated magazine photography, tactile natural fabrics, large soft daylight shadows, asymmetrical styling, varied camera compositions. Garments are the subjects, not vector illustrations. No people, no faces, no hands, no text, no lettering, no logos, no extra garments, no frames. Each third must be a complete independent portrait composition.",
+  "origin": "C:\\Work\\vibecode\\landings\\images\\atelier_editorials_20261122_034236.jpg",
+  "model": "nano-banana-2-lite",
+  "taskId": "0b1fd29cf75d9368a87abe629db7e42c",
+  "creditsConsumed": 4.0,
+  "derivation": "Crop 2 of three equal editorial panels"
+}

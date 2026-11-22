@@ -1,0 +1,3 @@
+Source: Google Fonts, Libre Baskerville
+https://fonts.gstatic.com/s/librebaskerville/v24/kmKUZrc3Hgbbcjq75U4uslyuy4kn0olVQ-LglH6T17ujFgkSCQ.ttf
+Open font; accompanying OFL license is published upstream.
